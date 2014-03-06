@@ -1,5 +1,8 @@
 package myWebCrawler;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -18,10 +21,15 @@ public class CrawlJsoup implements CrawlerInterface {
 		List<String> tmpList = new ArrayList<String>();
 
 		try {
-			doc = Jsoup.parse(url, 99999);
+			//TODO:
+			//doc = Jsoup.parse(url, 99999);
+			doc = Jsoup.parse(new File(
+					"/Users/dominikfeininger/Downloads/hsHofQuellcode.html"),
+					"UTF-8");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		System.out.println(doc.toString());
 
 		for (Elements e : tmpHS.parseContent(doc)) {
 			for (Element i : e) {
