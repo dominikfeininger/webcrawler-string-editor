@@ -1,6 +1,9 @@
 package myWebCrawler;
 
+import java.io.BufferedReader;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
@@ -17,8 +20,25 @@ public class ReadAndWrite {
 	}
 	
 	public List<String> readFileFromDisk(String filename){
-		//TODO:
-		List<String> list = new ArrayList<String>(); 
+			
+		List<String> list = new ArrayList<String>();
+		
+		BufferedReader reader = null;
+		try {
+			reader = new BufferedReader(new FileReader(filename));
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String line = null;
+		try {
+			while ((line = reader.readLine()) != null) {
+			    list.add(line);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
 		return list;
 	}
 	
