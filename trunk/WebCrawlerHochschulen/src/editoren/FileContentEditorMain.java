@@ -1,4 +1,6 @@
-package myWebCrawler;
+package editoren;
+
+import genericInAnOutPut.ReadAndWrite;
 
 import java.util.ArrayList;
 import java.util.List;

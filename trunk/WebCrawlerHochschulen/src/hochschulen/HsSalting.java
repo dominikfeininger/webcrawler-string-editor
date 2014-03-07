@@ -1,4 +1,4 @@
-package myWebCrawler;
+package hochschulen;
 
 import java.net.MalformedURLException;
 import java.net.URL;

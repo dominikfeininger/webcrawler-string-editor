@@ -1,9 +1,11 @@
-package myWebCrawler;
+package hochschulen;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+
+import myWebCrawler.CrawlJsoup;
 
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
