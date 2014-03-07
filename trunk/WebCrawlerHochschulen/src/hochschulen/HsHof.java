@@ -13,22 +13,22 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
-public class HsHof extends HsSalting implements HsSaltingInterface{
+public class HsHof extends HsSalting implements HsSaltingInterface {
 
 	@Override
 	public List<String> startCrawler(CrawlJsoup crawler) {
-		
-		List<URL> urlList = null;
+
+		List<String> urlList = null;
 		List<String> domList = new ArrayList<String>();
-		
+
 		try {
-			urlList = this.toURLs(this.getLinks());
+			urlList = this.getLinks();
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
 
-		for (URL i : urlList) {
-			domList.addAll(crawler.paresContent(this, i.toString()));
+		for (String i : urlList) {
+			domList.addAll(crawler.paresContent(this, i));
 		}
 
 		return domList;
@@ -39,22 +39,9 @@ public class HsHof extends HsSalting implements HsSaltingInterface{
 
 		List<String> pathList = new ArrayList<String>();
 
-		pathList.add("http://www.hof-university.de/ueber-uns/personen.html?tx_personenverzeichnis_pi1%5Baction%5D=suche&tx_personenverzeichnis_pi1%5Bcontroller%5D=Personenverzeichnis&cHash=a646903d4e735b8cc7f84d37e75b040e#personensuche");
+		pathList.add("/Users/dominikfeininger/Dropbox/Master_Thesis/Schramm_HIWI_Job/hsHofQuellcode.html");
 
 		return pathList;
-	}
-	
-	public List<URL> getDoc(){
-
-		List<URL> urlList = new ArrayList<URL>();
-		Document doc = null;
-		try {
-			doc = Jsoup.parse(new File("/Users/dominikfeininger/Downloads/hsHofQuellcode.html"),"UTF-8");
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-		return urlList;
 	}
 
 	@Override
@@ -62,16 +49,16 @@ public class HsHof extends HsSalting implements HsSaltingInterface{
 
 		ArrayList<Elements> e = new ArrayList<Elements>();
 
-		Elements name = doc.select(
-				"span[class=six mobile-one columns]").select("h4");
-		System.out.println("name: " + doc.select("span[class=six mobile-one columns]").select("h4").text());
-		System.out.println("name: " + name.text());
+		Elements name = doc.select("div[class=pers bg]").select("h4");
+		// System.out.println("name: " +
+		// doc.select("span[class=six mobile-one columns]").select("h4").text());
+		//System.out.println("name: " + name.text());
 		e.add(name);
-		
-		Elements email = doc.select(
-				"span[class=six mobile-one columns]").select("a");
-		System.out.println("email: " + doc.select("span[class=six mobile-one columns]").select("a").text());
-		System.out.println("name: " + name.text());
+
+		Elements email = doc.select("div[class=pers bg]").select("a");
+		// System.out.println("email: " +
+		// doc.select("span[class=six mobile-one columns]").select("a").text());
+		//System.out.println("email: " + email.text());
 		e.add(email);
 		return e;
 	}

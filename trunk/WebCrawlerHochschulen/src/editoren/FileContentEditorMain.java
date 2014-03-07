@@ -23,9 +23,12 @@ public class FileContentEditorMain {
 		
 		//remove empty lines
 		//rw.writeToFile(editor.removelines(rw.readFileFromDisk("/Users/dominikfeininger/Dropbox/Master_Thesis/Schramm_HIWI_Job/emails.txt")));
-		rw.writeToFile(editor.removelines(rw.readFileFromDisk("namen")), "namen");
+		//rw.writeToFile(editor.removelines(rw.readFileFromDisk("namen")), "namen");
 		
 		//remove ,
 		//rw.printConsoleSeparated((editor.removeComma(rw.readFileFromDisk("/Users/dominikfeininger/Dropbox/Master_Thesis/Schramm_HIWI_Job/namen.txt"))));
+		
+		//add domain
+		rw.printConsole(editor.addDomain(rw.readFileFromDisk("emails2")));
 	}
 }

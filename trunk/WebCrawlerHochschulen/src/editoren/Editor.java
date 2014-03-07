@@ -79,5 +79,17 @@ public class Editor {
 		
 		return list2;
 	}
+	
+	public List<String> addDomain(List<String> domList){
+		List<String> list = new ArrayList<String>();
+		
+		Iterator<String> iter = domList.iterator();
+		
+		while(iter.hasNext()){
+			list.add(iter.next()+"@hof-university.de");
+		}
+		
+		return list;
+	}
 
 }
