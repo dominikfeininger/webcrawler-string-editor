@@ -1,10 +1,13 @@
 package myWebCrawler;
 
+import java.io.File;
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
@@ -23,7 +26,7 @@ public class HsHof implements HsSaltingInterface{
 		}
 
 		for (URL i : urlList) {
-			domList.addAll(crawler.paresContent(this, i));
+			domList.addAll(crawler.paresContent(this, i.toString()));
 		}
 
 		return domList;
@@ -34,8 +37,21 @@ public class HsHof implements HsSaltingInterface{
 
 		List<URL> urlList = new ArrayList<URL>();
 
-		//urlList.add(new URL(
-				//"http://www.hof-university.de/ueber-uns/personen.html?tx_personenverzeichnis_pi1%5Baction%5D=suche&tx_personenverzeichnis_pi1%5Bcontroller%5D=Personenverzeichnis&cHash=a646903d4e735b8cc7f84d37e75b040e#personensuche"));
+		urlList.add(new URL(
+				"http://www.hof-university.de/ueber-uns/personen.html?tx_personenverzeichnis_pi1%5Baction%5D=suche&tx_personenverzeichnis_pi1%5Bcontroller%5D=Personenverzeichnis&cHash=a646903d4e735b8cc7f84d37e75b040e#personensuche"));
+
+		return urlList;
+	}
+	
+	public List<URL> getDoc(){
+
+		List<URL> urlList = new ArrayList<URL>();
+		Document doc = null;
+		try {
+			doc = Jsoup.parse(new File("/Users/dominikfeininger/Downloads/hsHofQuellcode.html"),"UTF-8");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 
 		return urlList;
 	}

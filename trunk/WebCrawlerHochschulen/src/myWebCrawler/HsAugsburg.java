@@ -51,7 +51,7 @@ public class HsAugsburg extends HsSalting implements HsSaltingInterface {
 		}
 
 		for (URL i : urlList) {
-			domList.addAll(crawler.paresContent(this, i));
+			domList.addAll(crawler.paresContent(this, i.toString()));
 		}
 
 		return domList;
