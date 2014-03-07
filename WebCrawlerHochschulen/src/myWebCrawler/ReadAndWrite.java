@@ -25,9 +25,8 @@ public class ReadAndWrite {
 		
 		BufferedReader reader = null;
 		try {
-			reader = new BufferedReader(new FileReader(filename));
+			reader = new BufferedReader(new FileReader("/Users/dominikfeininger/Dropbox/Master_Thesis/Schramm_HIWI_Job/"+filename+".txt"));
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		String line = null;
@@ -55,12 +54,11 @@ public class ReadAndWrite {
 		}
 	}
 	
-	public void writeToFileSeparated(List<String[]> spaceSeperator) {
+	public void writeToFileSeparated(List<String[]> spaceSeperator, String filename) {
 		PrintWriter writer = null;
-
+		//TODO: add parameter url
 		try {
-			writer = new PrintWriter("tmpHochschulen.txt", "UTF-8");
-			
+			writer = new PrintWriter("/Users/dominikfeininger/Dropbox/Master_Thesis/Schramm_HIWI_Job/"+filename+".txt", "UTF-8");
 
 			Iterator<String[]> iterator = spaceSeperator.iterator();
 
@@ -81,11 +79,11 @@ public class ReadAndWrite {
 
 	}
 	
-	public void writeToFile(List<String> domList) {
+	public void writeToFile(List<String> domList, String filename) {
 		PrintWriter writer = null;
 
 		try {
-			writer = new PrintWriter("tmpHochschulen.txt", "UTF-8");
+			writer = new PrintWriter("/Users/dominikfeininger/Dropbox/Master_Thesis/Schramm_HIWI_Job/"+filename+".txt", "UTF-8");
 
 			Iterator<String> iterator = domList.iterator();
 			while (iterator.hasNext()) {
@@ -97,5 +95,4 @@ public class ReadAndWrite {
 			writer.close();
 		}
 	}
-
 }

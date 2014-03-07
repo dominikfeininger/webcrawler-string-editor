@@ -10,20 +10,20 @@ public class FileContentEditorMain {
 		ReadAndWrite rw = new ReadAndWrite();
 		
 		//separate
-		//rw.writeToFileSeparated((editor.spaceSeperator(rw.readFileFromDisk("/Users/dominikfeininger/Downloads/namen.txt"))));
-		//rw.printConsoleSeparated((editor.spaceSeperator(rw.readFileFromDisk("/Users/dominikfeininger/Downloads/namen.txt"))));
+		//rw.writeToFileSeparated((editor.spaceSeperator(rw.readFileFromDisk("/Users/dominikfeininger/Dropbox/Master_Thesis/Schramm_HIWI_Job/namen.txt"))));
+		//rw.printConsoleSeparated((editor.spaceSeperator(rw.readFileFromDisk("/Users/dominikfeininger/Dropbox/Master_Thesis/Schramm_HIWI_Job/namen.txt"))));
 		
 		//replace (at) -> @
-		//rw.writeToFile(editor.atSubstiut(rw.readFileFromDisk("/Users/dominikfeininger/Downloads/emails.txt")));
+		//rw.writeToFile(editor.atSubstiut(rw.readFileFromDisk("/Users/dominikfeininger/Dropbox/Master_Thesis/Schramm_HIWI_Job/emails.txt")));
 		
 		//replace (@) -> @
-		//rw.writeToFile(editor.atSubstiut2(rw.readFileFromDisk("/Users/dominikfeininger/Downloads/emails.txt")));
+		//rw.writeToFile(editor.atSubstiut2(rw.readFileFromDisk("/Users/dominikfeininger/Dropbox/Master_Thesis/Schramm_HIWI_Job/emails.txt")));
 		
 		//remove empty lines
-		//rw.writeToFile(editor.removelines(rw.readFileFromDisk("/Users/dominikfeininger/Downloads/emails.txt")));
-		rw.writeToFile(editor.removelines(rw.readFileFromDisk("/Users/dominikfeininger/Downloads/namen.txt")));
+		//rw.writeToFile(editor.removelines(rw.readFileFromDisk("/Users/dominikfeininger/Dropbox/Master_Thesis/Schramm_HIWI_Job/emails.txt")));
+		rw.writeToFile(editor.removelines(rw.readFileFromDisk("namen")), "namen");
 		
 		//remove ,
-		//rw.printConsoleSeparated((editor.removeComma(rw.readFileFromDisk("/Users/dominikfeininger/Downloads/namen.txt"))));
+		//rw.printConsoleSeparated((editor.removeComma(rw.readFileFromDisk("/Users/dominikfeininger/Dropbox/Master_Thesis/Schramm_HIWI_Job/namen.txt"))));
 	}
 }
