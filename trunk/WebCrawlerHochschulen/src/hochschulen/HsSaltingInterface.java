@@ -14,7 +14,9 @@ public interface HsSaltingInterface {
 
 	public List<String> startCrawler(CrawlJsoup crawler);
 	
-	public List<URL> getLinks() throws MalformedURLException;
+	public List<String> getLinks() throws MalformedURLException;
 
 	public ArrayList<Elements> parseContent(Document doc);
+	
+	public List<URL> toURLs(List<String> links);
 }

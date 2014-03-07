@@ -10,7 +10,7 @@ import myWebCrawler.CrawlJsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
-public class HsAlbSig implements HsSaltingInterface {
+public class HsAlbSig extends HsSalting implements HsSaltingInterface {
 
 	@Override
 	public List<String> startCrawler(CrawlJsoup crawler) {
@@ -19,7 +19,7 @@ public class HsAlbSig implements HsSaltingInterface {
 		List<String> domList = new ArrayList<String>();
 		
 		try {
-			urlList = this.getLinks();
+			urlList = this.toURLs(this.getLinks());
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
@@ -32,15 +32,15 @@ public class HsAlbSig implements HsSaltingInterface {
 	}
 
 	@Override
-	public List<URL> getLinks() throws MalformedURLException {
+	public List<String> getLinks() throws MalformedURLException {
 
-		List<URL> urlList = new ArrayList<URL>();
+		List<String> pathList = new ArrayList<String>();
 
-		urlList.add(new URL(
-				"http://www.hs-albsig.de/studium/wirtschaftsinformatik/seiten/professoren.aspx"));
+		pathList.add("http://www.hof-university.de/ueber-uns/personen.html?tx_personenverzeichnis_pi1%5Baction%5D=suche&tx_personenverzeichnis_pi1%5Bcontroller%5D=Personenverzeichnis&cHash=a646903d4e735b8cc7f84d37e75b040e#personensuche");
 
-		return urlList;
+		return pathList;
 	}
+	
 
 	@Override
 	public ArrayList<Elements> parseContent(Document doc) {
