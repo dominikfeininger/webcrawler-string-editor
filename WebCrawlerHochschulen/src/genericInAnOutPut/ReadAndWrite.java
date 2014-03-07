@@ -1,4 +1,4 @@
-package myWebCrawler;
+package genericInAnOutPut;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

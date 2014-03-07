@@ -1,4 +1,4 @@
-package myWebCrawler;
+package hochschulen;
 
 import java.io.File;
 import java.io.IOException;
@@ -6,6 +6,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+
+import myWebCrawler.CrawlJsoup;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

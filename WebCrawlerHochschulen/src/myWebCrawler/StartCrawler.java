@@ -1,5 +1,13 @@
 package myWebCrawler;
 
+import editoren.Editor;
+import genericInAnOutPut.ReadAndWrite;
+import hochschulen.Fbti;
+import hochschulen.HsAlbSig;
+import hochschulen.HsAugsburg;
+import hochschulen.HsHof;
+import hochschulen.HsSaltingInterface;
+
 public class StartCrawler {
 	
 	public static void main(String[] args) {
