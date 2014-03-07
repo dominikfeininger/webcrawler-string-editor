@@ -12,15 +12,13 @@ import org.jsoup.select.Elements;
 
 public class HsAugsburg extends HsSalting implements HsSaltingInterface {
 
-	public List<URL> getLinks() throws MalformedURLException {
+	public List<String> getLinks() throws MalformedURLException {
 
-		List<URL> urlList = new ArrayList<URL>();
+		List<String> pathList = new ArrayList<String>();
 
-		urlList.add(new URL(
-				"http://www.hs-augsburg.de/fakultaet/informatik/person/professor/index.html"));
-		
+		pathList.add("http://www.hof-university.de/ueber-uns/personen.html?tx_personenverzeichnis_pi1%5Baction%5D=suche&tx_personenverzeichnis_pi1%5Bcontroller%5D=Personenverzeichnis&cHash=a646903d4e735b8cc7f84d37e75b040e#personensuche");
 
-		return urlList;
+		return pathList;
 	}
 
 	public ArrayList<Elements> parseContent(Document doc) {
@@ -40,6 +38,7 @@ public class HsAugsburg extends HsSalting implements HsSaltingInterface {
 		
 		return e;
 	}
+
 	
 	public List<String> startCrawler(CrawlJsoup crawler){
 		
@@ -47,7 +46,7 @@ public class HsAugsburg extends HsSalting implements HsSaltingInterface {
 		List<URL> urlList = null;
 		
 		try {
-			urlList = this.getLinks();
+			urlList = this.toURLs(this.getLinks());
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}

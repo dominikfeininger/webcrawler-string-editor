@@ -13,24 +13,17 @@ import org.jsoup.select.Elements;
 public class Fbti extends HsSalting implements HsSaltingInterface {
 	
 	@Override
-	public List<URL> getLinks() throws MalformedURLException {
+	public List<String> getLinks() throws MalformedURLException {
 
-		List<URL> urlList = new ArrayList<URL>();
+		List<String> pathList = new ArrayList<String>();
 
-		urlList.add(new URL(
-				"http://fbtiform.fh-hannover.de/mitglieder/index.php?cmd=gesamtAnsicht&id=ad"));
-		urlList.add(new URL(
-				"http://fbtiform.fh-hannover.de/mitglieder/index.php?cmd=gesamtAnsicht&id=eh"));
-		urlList.add(new URL(
-				"http://fbtiform.fh-hannover.de/mitglieder/index.php?cmd=gesamtAnsicht&id=il"));
-		urlList.add(new URL(
-				"http://fbtiform.fh-hannover.de/mitglieder/index.php?cmd=gesamtAnsicht&id=mq"));
-		urlList.add(new URL(
-				"http://fbtiform.fh-hannover.de/mitglieder/index.php?cmd=gesamtAnsicht&id=ru"));
-		urlList.add(new URL(
-				"http://fbtiform.fh-hannover.de/mitglieder/index.php?cmd=gesamtAnsicht&id=vz"));
+		pathList.add("http://fbtiform.fh-hannover.de/mitglieder/index.php?cmd=gesamtAnsicht&id=ad");
 
-		return urlList;
+		pathList.add("http://fbtiform.fh-hannover.de/mitglieder/index.php?cmd=gesamtAnsicht&id=eh");
+
+		pathList.add("http://fbtiform.fh-hannover.de/mitglieder/index.php?cmd=gesamtAnsicht&id=il");
+
+		return pathList;
 	}
 
 	@Override
@@ -43,6 +36,16 @@ public class Fbti extends HsSalting implements HsSaltingInterface {
 
 		return e;
 	}
+	
+	@Override
+	public List<URL> toURLs(List<String> links) {
+		
+		List<URL> urlList = new ArrayList<URL>();
+		
+		//TODO:
+		
+		return urlList;
+	}
 
 	@Override
 	public List<String> startCrawler(CrawlJsoup crawler) {
@@ -51,7 +54,7 @@ public class Fbti extends HsSalting implements HsSaltingInterface {
 		List<String> domList = new ArrayList<String>();
 		
 		try {
-			urlList = this.getLinks();
+			urlList = this.toURLs(this.getLinks());
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
