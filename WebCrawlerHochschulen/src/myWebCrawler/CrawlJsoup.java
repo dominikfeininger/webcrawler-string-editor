@@ -42,7 +42,7 @@ public class CrawlJsoup implements CrawlerInterface {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		System.out.println(doc.toString());
+		//System.out.println(doc.toString());
 
 		for (Elements e : tmpHS.parseContent(doc)) {
 			for (Element i : e) {
