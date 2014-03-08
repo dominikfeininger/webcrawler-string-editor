@@ -19,4 +19,6 @@ public interface HsSaltingInterface {
 	public ArrayList<Elements> parseContent(Document doc);
 	
 	public List<URL> toURLs(List<String> links);
+	
+	public void setLinks(List<String> tmplinks);
 }

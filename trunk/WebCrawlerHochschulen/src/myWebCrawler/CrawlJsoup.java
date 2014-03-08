@@ -46,7 +46,7 @@ public class CrawlJsoup implements CrawlerInterface {
 
 		for (Elements e : tmpHS.parseContent(doc)) {
 			for (Element i : e) {
-				tmpList.add(i.text().toString());
+				tmpList.add(i.toString());//.text());
 			}
 		}
 		return tmpList;
