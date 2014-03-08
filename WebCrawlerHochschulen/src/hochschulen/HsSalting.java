@@ -11,6 +11,7 @@ import org.jsoup.select.Elements;
 
 public class HsSalting {
 
+	List<String> links = null;
 	
 	public List<URL> toURLs(List<String> links) {
 		
@@ -29,6 +30,10 @@ public class HsSalting {
 		}
 		
 		return urlList;
+	}
+	
+	public void setLinks(List<String> tmplinks){
+		this.links = tmplinks;
 	}
 	
 }

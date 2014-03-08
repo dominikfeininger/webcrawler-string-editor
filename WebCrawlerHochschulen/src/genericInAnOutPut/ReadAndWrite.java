@@ -1,9 +1,11 @@
 package genericInAnOutPut;
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
@@ -19,14 +21,17 @@ public class ReadAndWrite {
 		}
 	}
 	
+	@SuppressWarnings("resource")
 	public List<String> readFileFromDisk(String filename){
 			
 		List<String> list = new ArrayList<String>();
 		
 		BufferedReader reader = null;
+		
 		try {
-			reader = new BufferedReader(new FileReader("/Users/dominikfeininger/Dropbox/Master_Thesis/Schramm_HIWI_Job/"+filename+".txt"));
-		} catch (FileNotFoundException e) {
+			reader = new BufferedReader(new InputStreamReader(new FileInputStream("/Users/dominikfeininger/Dropbox/Master_Thesis/Schramm_HIWI_Job/"+filename+".txt"),"UTF-8"));
+			//reader = new BufferedReader(new FileReader("/Users/dominikfeininger/Dropbox/Master_Thesis/Schramm_HIWI_Job/"+filename+".txt"));
+		} catch (FileNotFoundException | UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
 		String line = null;
@@ -95,4 +100,5 @@ public class ReadAndWrite {
 			writer.close();
 		}
 	}
+
 }
