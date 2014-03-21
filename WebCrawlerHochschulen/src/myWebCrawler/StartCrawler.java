@@ -6,6 +6,7 @@ import hochschulen.Fbti;
 import hochschulen.HsAlbSig;
 import hochschulen.HsAugsburg;
 import hochschulen.HsHof;
+import hochschulen.HsKonstanz;
 import hochschulen.HsNiederreihn;
 import hochschulen.HsSaltingInterface;
 import hochschulen.HsStrahlsund;
@@ -29,6 +30,7 @@ public class StartCrawler {
 		HsSaltingInterface hsNieder = new HsNiederreihn();
 		HsSaltingInterface hsStrahlsund = new HsStrahlsund();
 		HsSaltingInterface hsStuttgart = new HsStuttgart();
+		HsSaltingInterface hsKonstanz = new HsKonstanz();
 		
 		//hsAugsburg.startCrawler(cj);
 		//fbti.startCrawler(cj);
@@ -41,8 +43,11 @@ public class StartCrawler {
 		//hsStrahlsund.setLinks(rw.readFileFromDisk("links"));
 		//printer.printConsole(hsStrahlsund.startCrawler(cj));
 		
-		hsStuttgart.setLinks(rw.readFileFromDisk("links"));
-		printer.printConsole(hsStuttgart.startCrawler(cj));
+		//hsStuttgart.setLinks(rw.readFileFromDisk("links"));
+		//printer.printConsole(hsStuttgart.startCrawler(cj));
+		
+		hsKonstanz.setLinks(rw.readFileFromDisk("links"));
+		printer.printConsole(hsKonstanz.startCrawler(cj));
 		
 	}
 }
